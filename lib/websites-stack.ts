@@ -62,7 +62,7 @@ export class WebsitesStack extends Stack {
         origin: migrationOriginGroup,
       },
       additionalBehaviors: {
-        "/app.json": {
+        "/manifests/*": {
           origin: countryOriginGroup,
           cachePolicy: countryCachePolicy,
           edgeLambdas: [
