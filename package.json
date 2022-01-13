@@ -6,8 +6,8 @@
   },
   "scripts": {
     "bootstrap": "cdk bootstrap",
-    "deploy": "cdk deploy websites",
-    "deploy-lambda": "cdk deploy edge-lambda-stack-c8d52d921f37370a57eedafe0e0e3c0339135e6371"
+    "deploy": "cdk deploy WebsitesStack",
+    "deploy-lambdaedge": "cdk deploy LambdaEdgeStack"
   },
   "devDependencies": {
     "@types/aws-lambda": "^8.10.89",

@@ -28,8 +28,8 @@ export class WebsitesStack extends Stack {
     const countryOrigin = new origins.S3Origin(publishBucket, { 
       originPath: 'default',
         customHeaders: {
-          "X-Websites-Countries": "NL,BE,FR,DE",
-          "X-Websites-Prefix": "/europe"
+          "X-Websites-Countries": "BE,BG,CZ,DK,DE,EE,IE,EL,ES,FR,HR,IT,CY,LV,LT,LU,HU,MT,NL,AT,PL,PT,RO,SI,SK,FI,SE",
+          "X-Websites-Countries-Path": "/eu"
         }
     });
     const migrationOrigin = new origins.HttpOrigin(migrationDistribution.distributionDomainName);
@@ -51,7 +51,8 @@ export class WebsitesStack extends Stack {
       runtime: lambda.Runtime.NODEJS_14_X,
       architecture: lambda.Architecture.ARM_64,
       handler: 'index.handler',
-      code: lambda.Code.fromAsset('./src/functions/origin-selector')
+      code: lambda.Code.fromAsset('./src/functions/origin-selector'),
+      stackId: "LambdaEdgeStack"
     });
 
     // Distributions
